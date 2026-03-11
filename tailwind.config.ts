@@ -8,32 +8,40 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        accent: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          500: '#14b8a6',
-          900: '#134e4a',
-          950: '#042f2e',
-        },
-        brand: {
-          dark: '#0a0a0a',
-          light: '#fafafa',
-          primary: '#0070f3',
-          purple: '#7928ca',
-          pink: '#ff0080',
-        }
+      fontFamily: {
+        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        serif: ["var(--font-serif)", "ui-serif", "Georgia"],
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-gradient': 'linear-gradient(to right, #000000, #1a1a1a)',
+      colors: {
+        base: "#0a0a0b",
+        engineers: {
+          accent: "#22d3ee",
+          muted: "rgba(34, 211, 238, 0.1)",
+          border: "rgba(34, 211, 238, 0.2)",
+        },
+        pms: {
+          accent: "#58a6ff",
+          muted: "rgba(88, 166, 255, 0.1)",
+          border: "rgba(88, 166, 255, 0.15)",
+        },
+        leaders: {
+          accent: "#c9a96e",
+          muted: "rgba(201, 169, 110, 0.1)",
+          border: "rgba(201, 169, 110, 0.15)",
+        },
       },
       animation: {
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'spin-slow': 'spin 8s linear infinite',
-      }
+        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "spin-slow": "spin 8s linear infinite",
+        "cursor-blink": "blink 1s step-end infinite",
+      },
+      keyframes: {
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
+      },
     },
   },
   plugins: [],

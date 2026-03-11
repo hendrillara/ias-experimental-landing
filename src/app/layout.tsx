@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/shared/SmoothScroll";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 
 export const metadata: Metadata = {
-  title: "IAS | Experimental Landing Pages",
-  description: "Next generation landing pages for IAS",
+  title: "IAS | Intelligent Agent System",
+  description: "The operating system for agentic organizations",
 };
 
 export default function RootLayout({
@@ -15,8 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} bg-black text-white antialiased`}>{children}</body>
+    <html lang="en" className={`dark ${inter.variable} ${jetbrains.variable} ${playfair.variable}`}>
+      <body className="font-sans bg-[#0a0a0b] text-white antialiased">
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }
